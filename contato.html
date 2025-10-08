@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - FastPães</title>
+    <style>
+        /* COPIE E COLE O MESMO BLOCO <style> DO SEU INDEX.HTML AQUI */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; line-height: 1.6; color: #333; }
+        h1, h2 { color: #FF4500; border-bottom: 2px solid #FFDAB9; padding-bottom: 5px; }
+        section { margin-bottom: 40px; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        nav { margin-top: 10px; }
+        form { margin-top: 20px; }
+        fieldset { border: 1px solid #FFDAB9; border-radius: 5px; margin-bottom: 20px; padding: 15px; }
+        legend { font-weight: bold; color: #FF4500; padding: 0 5px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea { width: 95%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #FF4500; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        button:hover { background-color: #e03e00; }
+        footer { margin-top: 40px; text-align: center; color: #777; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fale com a Equipe FastPães</h1>
+        <nav><a href="index.html">Voltar para a Página Inicial</a></nav>
+    </header>
+    <main>
+        <section>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Informações de Contato</legend>
+                    <p><label for="nome">Nome Completo: *</label><input type="text" id="nome" name="nome" required placeholder="Seu nome completo"></p>
+                    <p><label for="email">Email: *</label><input type="email" id="email" name="email" required placeholder="exemplo@email.com"></p>
+                    <p><label for="telefone">Telefone:</label><input type="tel" id="telefone" name="telefone" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" placeholder="(11) 99999-8888"></p>
+                    <p><label for="assunto">Assunto: *</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="informacoes">ℹ️ Informações gerais</option>
+                            <option value="reclamacao">⚠️ Reclamação</option>
+                            <option value="sugestao">💡 Sugestão</option>
+                        </select>
+                    </p>
+                    <p><label for="mensagem">Mensagem: *</label><textarea id="mensagem" name="mensagem" rows="5" required minlength="10" placeholder="Escreva sua mensagem aqui..."></textarea></p>
+                </fieldset>
+                <p><button type="submit">Enviar Mensagem</button></p>
+            </form>
+        </section>
+    </main>
+    <footer><p>&copy; 2025 FastPães</p></footer>
+</body>
+</html>

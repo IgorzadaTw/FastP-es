@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - FastPães</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; line-height: 1.6; color: #333; }
+        h1, h2 { color: #FF4500; border-bottom: 2px solid #FFDAB9; padding-bottom: 5px; }
+        section { margin-bottom: 40px; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        nav { margin-top: 10px; margin-bottom: 20px; }
+        form { margin-top: 20px; }
+        fieldset { border: 1px solid #FFDAB9; border-radius: 5px; margin-bottom: 20px; padding: 15px; }
+        legend { font-weight: bold; color: #FF4500; padding: 0 5px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], select, textarea { width: 95%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #FF4500; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        button:hover { background-color: #e03e00; }
+        footer { margin-top: 40px; text-align: center; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sua Opinião nos Acelera!</h1>
+        <nav><a href="index.html">Voltar para a Página Inicial</a></nav>
+    </header>
+    <main>
+        <section>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Seus Dados (Opcional)</legend>
+                    <p>
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome">
+                    </p>
+                    <p>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email">
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Sua Avaliação</legend>
+                    <p>
+                        <label for="servico">Produto/Serviço Avaliado: *</label><br>
+                        <select id="servico" name="servico" required>
+                            <option value="" disabled selected>Selecione o que você está avaliando</option>
+                            <option value="paes">🥖 Pães</option>
+                            <option value="doces">🍰 Doces e bolos</option>
+                            <option value="salgados">🥐 Salgados</option>
+                            <option value="atendimento">👥 Atendimento</option>
+                            <option value="velocidade">🚀 Velocidade da Entrega</option>
+                        </select>
+                    </p>
+                    <p>
+                        Avaliação Geral: *<br>
+                        <input type="radio" id="excelente" name="avaliacao" value="excelente" required> <label for="excelente">🌟 Excelente</label><br>
+                        <input type="radio" id="bom" name="avaliacao" value="bom"> <label for="bom">👍 Bom</label><br>
+                        <input type="radio" id="regular" name="avaliacao" value="regular"> <label for="regular">😐 Regular</label><br>
+                        <input type="radio" id="ruim" name="avaliacao" value="ruim"> <label for="ruim">👎 Ruim</label>
+                    </p>
+                    <p>
+                        <label for="comentarios">Comentários:</label><br>
+                        <textarea id="comentarios" name="comentarios" rows="5" placeholder="Gostaria de nos dizer algo mais?"></textarea>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Permissões</legend>
+                    <p>
+                        <input type="checkbox" id="recomenda" name="recomenda" value="sim">
+                        <label for="recomenda">Você recomendaria a FastPães para amigos?</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="publica" name="publica" value="sim">
+                        <label for="publica">Autoriza a publicação do seu depoimento em nosso site?</label>
+                    </p>
+                </fieldset>
+                <p><button type="submit">Enviar Avaliação</button></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 FastPães - A Velocidade Saborosa.</p>
+    </footer>
+</body>
+</html>
