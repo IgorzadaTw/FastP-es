@@ -26,7 +26,7 @@
     </header>
     <main>
         <section>
-            <form action="#" method="post">
+        <form action="#" method="post" id="meuFormulario">
                 <fieldset>
                     <legend>Dados Pessoais</legend>
                     <p><label for="nome-completo">Nome Completo: *</label><br><input type="text" id="nome-completo" name="nome-completo" required></p>
@@ -60,5 +60,13 @@
     <footer>
         <p>&copy; 2025 FastPães - A Velocidade Saborosa.</p>
     </footer>
+    <script>
+        const form = document.getElementById('meuFormulario');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Mensagem enviada com sucesso!');
+            form.reset();
+        });
+    </script>
 </body>
 </html>

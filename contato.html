@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - FastPães</title>
     <style>
-        /* COPIE E COLE O MESMO BLOCO <style> DO SEU INDEX.HTML AQUI */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; line-height: 1.6; color: #333; }
         h1, h2 { color: #FF4500; border-bottom: 2px solid #FFDAB9; padding-bottom: 5px; }
         section { margin-bottom: 40px; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
@@ -27,7 +26,7 @@
     </header>
     <main>
         <section>
-            <form action="#" method="post">
+            <form action="#" method="post" id="meuFormulario">
                 <fieldset>
                     <legend>Informações de Contato</legend>
                     <p><label for="nome">Nome Completo: *</label><input type="text" id="nome" name="nome" required placeholder="Seu nome completo"></p>
@@ -48,5 +47,14 @@
         </section>
     </main>
     <footer><p>&copy; 2025 FastPães</p></footer>
+
+    <script>
+        const form = document.getElementById('meuFormulario');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Mensagem enviada com sucesso!');
+            form.reset();
+        });
+    </script>
 </body>
 </html>
