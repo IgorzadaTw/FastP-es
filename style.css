@@ -1,0 +1,244 @@
+:root {
+    --primary-color: #CD853F; 
+    --secondary-color: #A0522D;
+    --accent-color: #FF4500; 
+    --neutral-color: #FFEFD5;  
+    --text-color: #654321;  
+    --light-bg-color: #FFFFFF;
+    --border-color: #ddd;
+    --form-border-color: #ccc;
+    --footer-text-color: #777;
+}
+
+/* ----- Reset Básico e Estilos Globais ----- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--neutral-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-bg-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ----- Tipografia e Hierarquia ----- */
+h1, h2 {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--neutral-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* ----- Header e Navegação ----- */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header nav {
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+header nav a:hover {
+    color: var(--neutral-color);
+    text-decoration: none;
+}
+
+/* ----- Seções ----- */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fdfdfd;
+}
+
+/* ----- Tabelas ----- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* ----- Galeria ----- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.galeria figure {
+    margin: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria figcaption {
+    padding: 10px;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* ----- Formulários ----- */
+form {
+    margin-top: 20px;
+}
+
+fieldset {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 0 10px;
+    font-size: 1.2em;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--form-border-color);
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+}
+
+/* ----- Botões ----- */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* ----- Footer ----- */
+footer {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--footer-text-color);
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
+}
