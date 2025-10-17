@@ -84,11 +84,24 @@ main, header, footer {
     font-size: 1.1em;
 }
 
-/* Seletor de Filho Direto (>): Estiliza apenas links na nav principal */
+/* Estilo da Barra de Navegação Principal */
+#cabecalho-principal > nav {
+    background-color: #c08552; /* Cor marrom/laranja da barra */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white; /* Isso deixa os pipes '|' brancos */
+}
+
 #cabecalho-principal > nav > a {
-    color: #FF4500;
+    color: white; /* Links brancos */
     font-weight: bold;
     text-decoration: none;
+    padding: 0 10px; /* Espaçamento entre os links */
+}
+
+#cabecalho-principal > nav > a:hover {
+    text-decoration: underline; /* Adiciona sublinhado no hover */
 }
 
 /* Pseudo-classe :hover (para botões) */
@@ -107,13 +120,7 @@ main, header, footer {
 /* Pseudo-classe :nth-child (para a tabela) */
 /* Cria um padrão de cores alternadas (zebra) */
 #cardapio tbody tr:nth-child(even) {
-    background-color: #FFFDF9;
-}
-
-/* Pseudo-classe :first-child (para a tabela) */
-/* Destaca o primeiro produto da lista */
-#cardapio tbody tr:first-child {
-    font-weight: bold;
+    background-color: #f5f5f5
 }
 
 /* --- 5. Componentes (continuação) --- */
@@ -170,8 +177,8 @@ th, td {
     text-align: left;
 }
 thead th {
-    background-color: #FFDAB9;
-    color: #FF4500;
+    background-color: #c08552;
+    color: white; 
 }
 
 /* Estilos para Vídeo (do seu código original) */
