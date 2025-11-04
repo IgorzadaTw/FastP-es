@@ -1,59 +1,82 @@
+Boa\! Você já tem um ótimo exemplo.
+
+Baseado em **tudo** que fizemos (a lição de responsividade, o debugging do menu, o cardápio novo e o rodapé), aqui está um `README.txt` completo para esta nova atividade.
+
+É só copiar e colar isso em um novo arquivo `README.txt`.
+
+-----
+
+```
 ======================================================
-PROJETO: Prática 6 - Posicionamento CSS
+PROJETO: Prática 8 - Responsividade e Interatividade JS
 ======================================================
 
 ALUNO: Igor Gabriel de Lima Fernandes
 TURMA: TI03381C_Noite
-DATA: 23/10/2025
+DATA: 28/10/2025
 
 ----------------
 1. DESCRIÇÃO DA ATIVIDADE
 ----------------
 
-Nesta Prática 6, o foco foi aplicar as diferentes propriedades de "position" do CSS para criar um layout mais dinâmico no site "FastPães".
-Foram implementados elementos fixos (header, botões flutuantes), elementos de sobreposição (badges) e elementos "grudentos" (cabeçalho da tabela).
-
-Aproveitei a prática para fazer uma refatoração importante: todas as páginas (index, contato, pedidos, etc.) agora usam um único arquivo de estilo externo (`CSS/style.css`), garantindo um visual unificado em todo o site.
+Nesta Prática 8, o foco foi aplicar os conceitos da aula de "Trabalhando com Responsividade" ao site "FastPães".
+O objetivo era garantir que o layout funcionasse perfeitamente em dispositivos móveis (celulares) e adicionar novas seções de conteúdo e interatividade com JavaScript.
 
 ----------------
-2. TÉCNICAS DE POSICIONAMENTO APLICADAS
+2. DEBUGGING E CSS (Menu Hamburger)
 ----------------
 
-### 1. Header Fixo (position: fixed)
-* **O que eu fiz:** O cabeçalho (`#cabecalho-principal`) recebeu `position: fixed`.
-* **Resultado:** Isso faz com que ele fique "pregado" no topo da tela (`top: 0`), mesmo quando o usuário rola a página.
-* **Ajuste:** Para o conteúdo principal não ficar escondido *atrás* do header, foi aplicado um `padding-top` na classe `pagina-principal` (que está no `body` do index.html).
-* **Camada (z-index):** Usei `z-index: 1000;` para garantir que o header sempre flutue por cima do conteúdo.
+O maior desafio da atividade foi um bug no menu hamburger (ícone) do `index.html`, que não estava aparecendo em telas pequenas.
 
-### 2. Emblema de Promoção (position: relative e absolute)
-* **O que eu fiz:** Criei um `<span>` com a classe `.badge-promocao` dentro do card do pão francês.
-* **Elemento Pai (`.galeria figure`):** Recebeu `position: relative;`. Isso transforma o card no "chefe" do emblema.
-* **Elemento Filho (`.badge-promocao`):** Recebeu `position: absolute;`. Isso "solta" o emblema para flutuar e permite que eu o posicione com `top: 15px;` e `left: 15px;` (em relação ao card).
-* **Camada (z-index):** Usei `z-index: 10;` para o emblema flutuar por cima da imagem do pão.
-
-### 3. Botões Flutuantes (position: fixed)
-* **O que eu fiz:** Criei dois links `<a>`, `#btn-whatsapp` e `#btn-voltar-topo`.
-* **Resultado:** Eles usam `position: fixed;` para ficarem "flutuando" na tela, presos ao canto inferior (`bottom: 20px;`) da janela do navegador.
-* **Camada (z-index):** Receberam `z-index: 1001;`, um valor mais alto que o do header, para que passem por cima de tudo.
-
-### 4. Cabeçalho da Tabela (position: sticky)
-* **O que eu fiz:** O cabeçalho da tabela do cardápio (`thead th`) recebeu `position: sticky;`.
-* **Resultado:** O "sticky" faz o cabeçalho rolar normalmente com a página, mas quando ele bate no topo (ou no ponto que definimos), ele "gruda" ali.
-* **Ajuste:** Usei `top: 150px;` (a altura aproximada do header fixo) para que ele grude exatamente *abaixo* do header, e não fique escondido atrás dele.
+* **Problema (CSS):** A regra `.hamburger-menu` no `style.css` usava `position: absolute` e `top: -55px`. Isso fazia com que o botão fosse renderizado para FORA do topo da tela, ficando invisível.
+* **Solução:** Corrigi o `style.css` alterando o valor para `top: 10px;`. Isso posicionou o botão corretamente dentro do cabeçalho, tornando-o visível e funcional.
 
 ----------------
-3. ESTRUTURA FINAL DOS ARQUIVOS
+3. IMPLEMENTAÇÃO DA RESPONSIVIDADE
+----------------
+
+O `style.css` já utilizava uma abordagem "Mobile-First" e `media queries` para se adaptar:
+
+* **Menu (Mobile):** O `.hamburger-menu` é visível por padrão (`display: block`).
+* **Menu (Desktop):** Uma `@media (min-width: 768px)` esconde o `.hamburger-menu` (`display: none;`) e exibe os links normais (`.nav-links`) em linha (`display: flex`).
+* **Tabelas:** As tabelas do cardápio usam `display: block` e `overflow-x: auto` para permitir a rolagem horizontal em telas pequenas, sem quebrar o layout.
+* **Galeria:** A galeria de produtos usa `display: grid` com `repeat(auto-fit, minmax(280px, 1fr))`, fazendo com que os cards se ajustem automaticamente (ex: 1 coluna no celular, 4 colunas no desktop).
+
+----------------
+4. INTERATIVIDADE COM JAVASCRIPT
+----------------
+
+O site utiliza JavaScript para várias funções interativas:
+
+* **Menu Hamburger:** Um script no `index.html` usa `addEventListener` no clique do botão. Ele usa `.classList.toggle('active')` para adicionar/remover a classe "active" do `.nav-links`, que por sua vez é usada pelo CSS para mostrar ou esconder o menu (`.nav-links.active { display: flex; }`).
+* **Konami Code (Easter Egg):** Um script detecta a sequência de teclas (↑↑↓↓←→←→BA) e ativa o modo "Padaria Obscura" (classe `.padaria-obscura` no `body`).
+* **Formulários:** As páginas de `contato.html`, `pedidos.html`, etc., usam `event.preventDefault()` para impedir o envio do formulário e exibir um `alert()` de sucesso.
+
+----------------
+5. NOVOS CONTEÚDOS ADICIONADOS
+----------------
+
+Durante a atividade, duas seções principais foram criadas e adicionadas ao site:
+
+1.  **Cardápio de Hambúrgueres:** Uma nova tabela (`<table>`) de produtos (hambúrgueres) foi adicionada ao `index.html`, seguindo o mesmo estilo do cardápio de pães.
+2.  **Rodapé Completo:** A estrutura HTML completa do `<footer>` foi desenvolvida (usando `.rodape-container` e `.rodape-coluna`) para se encaixar nos estilos de Flexbox que já existiam no `style.css`. Este rodapé foi replicado em todas as 5 páginas HTML.
+
+----------------
+6. ESTRUTURA FINAL DOS ARQUIVOS
 ----------------
 
 /
 |-- index.html
+|-- CSS/
+|   |-- style.css (CSS com Grid, Flexbox e Responsividade)
 |-- contato.html
 |-- pedidos.html
 |-- feedback.html
 |-- cadastro.html
 |-- README.txt (Este arquivo)
-|-- CSS/
-|   |-- style.css (Arquivo de estilo principal)
-|-- images/
+|-- imagens/
 |-- videos/
+|-- sounds/
 |-- screenshots/
+
+```

@@ -4,37 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastPães - A Entrega Mais Rápida do Mundo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
     <header id="cabecalho-principal">
-        <h1 data-original-titulo="🚀 FastPães - Sua Fome Termina em Velocidade!"
-        data-obscuro-titulo="💀 Pães do Hell - Sua Fome Termina em Sangue!">
-        🚀 FastPães - Sua Fome Termina em Velocidade!
-    </h1>
-       <p data-original-slogan="Mais do que pães, entregamos **tempo**. Qualidade e frescor na velocidade da luz."
-       data-obscuro-slogan="Mais do que pães, entregamos **tormento**. Qualidade questionável na velocidade das sombras.">
-       Mais do que pães, entregamos **tempo**. Qualidade e frescor na velocidade da luz.
-    </p>
+        <div class="header-content">
+            <h1 data-original-titulo="🚀 FastPães - Sua Fome Termina em Velocidade!"
+                data-obscuro-titulo="💀 Pães do Hell - Sua Fome Termina em Sangue!">
+                🚀 FastPães - Sua Fome Termina em Velocidade!
+            </h1>
+            <p data-original-slogan="Mais do que pães, entregamos **tempo**. Qualidade e frescor na velocidade da luz."
+               data-obscuro-slogan="Mais do que pães, entregamos **tormento**. Qualidade questionável na velocidade das sombras.">
+               Mais do que pães, entregamos **tempo**. Qualidade e frescor na velocidade da luz.
+            </p>
+        </div>
         <nav>
-            <a href="index.html">Início</a> |
-            <a href="contato.html">Contato</a> |
-            <a href="pedidos.html">Pedidos Turbo</a> |
-            <a href="feedback.html">Feedback</a> |
-            <a href="cadastro.html">Cadastre-se</a>
+            <button class="hamburger-menu" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Contato</a>
+                <a href="pedidos.html">Pedidos Turbo</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="cadastro.html">Cadastre-se</a>
+            </div>
         </nav>
     </header>
 
     <hr>
 
     <main>
+        <section class="calculadora">
+            <h2>Calculadora de Pedidos</h2>
+            <form id="calculadora-form">
+                <label for="produto">Escolha o Produto:</label>
+                <select id="produto">
+                    </select>
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" value="1" min="1">
+                <label for="valor-pago">Valor Pago (R$):</label>
+                <input type="number" id="valor-pago" placeholder="Ex: 50.00" step="0.01">
+                <button type="submit">Calcular Pedido</button>
+            </form>
+            <div id="resultado"><p>Preencha os dados e calcule seu pedido.</p></div>
+        </section>
+
+        <hr>
+
         <section id="cardapio">
             <h2>📋 Cardápio Turbo</h2>
             <p>Produtos selecionados para preparo e entrega ultra-rápidos. Seu pedido em minutos!</p>
-
             <table border="1">
-                <caption>Cardápio FastPães: Produtos selecionados para entrega ultrarrápida.</caption>
+                <caption>Cardápio FastPães (Pães, Doces, Salgados, Burgers)</caption>
                 <thead>
                     <tr>
                         <th scope="col">Categoria</th>
@@ -43,211 +66,126 @@
                         <th scope="col">Preço (R$)</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Pães</td>
-                        <td data-original-nome="Pão Foguete (Francês)"
-                            data-obscuro-nome="Pão Mofado (com Larvas)">
-                            Pão Foguete (Francês)
-                        </td>
-                        <td data-original-desc="Assado em lotes contínuos. **Sempre quente e rápido.**"
-                            data-obscuro-desc="Cultivado em esporos ancestrais. **Surpreendentemente... vivo.**">
-                            Assado em lotes contínuos. **Sempre quente e rápido.**
-                        </td>
-                        <td>0,90 (unidade)</td>
-                    </tr>
-                    <tr>
-                        <td>Pães</td>
-                        <td data-original-nome="Croissant Turbo"
-                            data-obscuro-nome="Croissant de Sombra">
-                            Croissant Turbo
-                        </td>
-                        <td data-original-desc="Folhado e leve. Perfeito para um café da manhã **flash**."
-                            data-obscuro-desc="Feito com a escuridão entre as camadas. Leve como um fantasma.">
-                            Folhado e leve. Perfeito para um café da manhã **flash**.
-                        </td>
-                        <td>7,50</td>
-                    </tr>
-                    <tr>
-                        <td>Doces</td>
-                        <td data-original-nome="Bolo Propulsor (Chocolate)"
-                            data-obscuro-nome="Bolo Gosmento (Verde Pântano)">
-                            Bolo Propulsor (Chocolate)
-                        </td>
-                        <td data-original-desc="Fatia pronta. Energia instantânea para o seu dia."
-                            data-obscuro-desc="Direto do brejo. Energia... questionável.">
-                            Fatia pronta. Energia instantânea para o seu dia.
-                        </td>
-                        <td>9,00 (fatia)</td>
-                    </tr>
-                    <tr>
-                        <td>Doces</td>
-                        <td data-original-nome="Donut Velocidade 5"
-                            data-obscuro-nome="Rosquinha do Vórtice">
-                            Donut Velocidade 5
-                        </td>
-                        <td data-original-desc="Glacê ou chocolate. Satisfação **máxima em segundos**."
-                            data-obscuro-desc="Cobertura hipnótica. Comer pode alterar sua percepção do tempo.">
-                            Glacê ou chocolate. Satisfação **máxima em segundos**.
-                        </td>
-                        <td>5,50</td>
-                    </tr>
-                    <tr>
-                        <td>Salgados</td>
-                        <td data-original-nome="Coxinha Sonic"
-                            data-obscuro-nome="Coxinha Espectral">
-                            Coxinha Sonic
-                        </td>
-                        <td data-original-desc="Frita sob demanda. Chega **crocante** e deliciosa."
-                            data-obscuro-desc="Feita de ectoplasma. **Translúcida** e arrepiante.">
-                             Frita sob demanda. Chega **crocante** e deliciosa.
-                        </td>
-                        <td>7,00</td>
-                    </tr>
-                    <tr>
-                        <td>Salgados</td>
-                        <td data-original-nome="Pastel Jet"
-                            data-obscuro-nome="Pastel Assombrado">
-                            Pastel Jet
-                        </td>
-                        <td data-original-desc="Recheios clássicos, sem espera."
-                            data-obscuro-desc="Recheado com... bem, é melhor não saber. Barulhos estranhos incluídos.">
-                            Recheios clássicos, sem espera.
-                        </td>
-                        <td>5,90</td>
-                    </tr>
-                    <tr>
-                        <td>Bebidas</td>
-                        <td data-original-nome="Café Expresso Warp"
-                            data-obscuro-nome="Café do Pesadelo">
-                            Café Expresso Warp
-                        </td>
-                        <td data-original-desc="Pausa **instantânea** com café forte e concentrado."
-                            data-obscuro-desc="Destilado de medos noturnos. **Desperta**... outras coisas.">
-                            Pausa **instantânea** com café forte e concentrado.
-                        </td>
-                        <td>5,00</td>
-                    </tr>
-                    <tr>
-                        <td>Bebidas</td>
-                        <td data-original-nome="Suco Relâmpago (Laranja)"
-                            data-obscuro-nome="Suco de Pavor (Mistério)">
-                            Suco Relâmpago (Laranja)
-                        </td>
-                        <td data-original-desc="Copo fechado. Refresca em **0,1 segundo**."
-                            data-obscuro-desc="Cor instável. Beber causa vislumbres do futuro... ou passado.">
-                            Copo fechado. Refresca em **0,1 segundo**.
-                        </td>
-                        <td>8,00</td>
-                    </tr>
-                    <tr>
-                        <td>Lanches</td>
-                        <td data-original-nome="Pão com Manteiga 2x"
-                            data-obscuro-nome="Pão com Gosma Radioativa">
-                            Pão com Manteiga 2x
-                        </td>
-                        <td data-original-desc="Na chapa, sem demora. O clássico **acelerado**."
-                            data-obscuro-desc="A 'manteiga' brilha no escuro. Efeito colateral: luminescência temporária.">
-                            Na chapa, sem demora. O clássico **acelerado**.
-                        </td>
-                        <td>6,00</td>
-                    </tr>
-                    <tr>
-                        <td>Salgados</td>
-                        <td data-original-nome="Mini Pizza Cronometrada"
-                            data-obscuro-nome="Mini Pizza do Caos">
-                            Mini Pizza Cronometrada
-                        </td>
-                        <td data-original-desc="Mussarela e tomate, pronta em **1 minuto**."
-                            data-obscuro-desc="Ingredientes de origem desconhecida. Pronta quando ELA quiser.">
-                            Mussarela e tomate, pronta em **1 minuto**.
-                        </td>
-                        <td>8,50</td>
-                    </tr>
+                 <tbody>
+                    <tr><td>Pães</td><td data-original-nome="Pão Foguete (Francês)" data-obscuro-nome="Pão Mofado (com Larvas)">Pão Foguete (Francês)</td><td data-original-desc="Assado em lotes contínuos. **Sempre quente e rápido.**" data-obscuro-desc="Cultivado em esporos ancestrais. **Surpreendentemente... vivo.**">Assado em lotes contínuos. **Sempre quente e rápido.**</td><td>0,90 (unidade)</td></tr>
+                    <tr><td>Pães</td><td data-original-nome="Croissant Turbo" data-obscuro-nome="Croissant de Sombra">Croissant Turbo</td><td data-original-desc="Folhado e leve. Perfeito para um café da manhã **flash**." data-obscuro-desc="Feito com a escuridão entre as camadas. Leve como um fantasma.">Folhado e leve. Perfeito para um café da manhã **flash**.</td><td>7,50</td></tr>
+                    <tr><td>Doces</td><td data-original-nome="Bolo Propulsor (Chocolate)" data-obscuro-nome="Bolo Gosmento (Verde Pântano)">Bolo Propulsor (Chocolate)</td><td data-original-desc="Fatia pronta. Energia instantânea para o seu dia." data-obscuro-desc="Direto do brejo. Energia... questionável.">Fatia pronta. Energia instantânea para o seu dia.</td><td>9,00 (fatia)</td></tr>
+                    <tr><td>Doces</td><td data-original-nome="Donut Velocidade 5" data-obscuro-nome="Rosquinha do Vórtice">Donut Velocidade 5</td><td data-original-desc="Glacê ou chocolate. Satisfação **máxima em segundos**." data-obscuro-desc="Cobertura hipnótica. Comer pode alterar sua percepção do tempo.">Glacê ou chocolate. Satisfação **máxima em segundos**.</td><td>5,50</td></tr>
+                    <tr><td>Salgados</td><td data-original-nome="Coxinha Sonic" data-obscuro-nome="Coxinha Espectral">Coxinha Sonic</td><td data-original-desc="Frita sob demanda. Chega **crocante** e deliciosa." data-obscuro-desc="Feita de ectoplasma. **Translúcida** e arrepiante."> Frita sob demanda. Chega **crocante** e deliciosa.</td><td>7,00</td></tr>
+                    <tr><td>Salgados</td><td data-original-nome="Pastel Jet" data-obscuro-nome="Pastel Assombrado">Pastel Jet</td><td data-original-desc="Recheios clássicos, sem espera." data-obscuro-desc="Recheado com... bem, é melhor não saber. Barulhos estranhos incluídos.">Recheios clássicos, sem espera.</td><td>5,90</td></tr>
+                    <tr><td>Bebidas</td><td data-original-nome="Café Expresso Warp" data-obscuro-nome="Café do Pesadelo">Café Expresso Warp</td><td data-original-desc="Pausa **instantânea** com café forte e concentrado." data-obscuro-desc="Destilado de medos noturnos. **Desperta**... outras coisas.">Pausa **instantânea** com café forte e concentrado.</td><td>5,00</td></tr>
+                    <tr><td>Bebidas</td><td data-original-nome="Suco Relâmpago (Laranja)" data-obscuro-nome="Suco de Pavor (Mistério)">Suco Relâmpago (Laranja)</td><td data-original-desc="Copo fechado. Refresca em **0,1 segundo**." data-obscuro-desc="Cor instável. Beber causa vislumbres do futuro... ou passado.">Copo fechado. Refresca em **0,1 segundo**.</td><td>8,00</td></tr>
+                    <tr><td>Lanches</td><td data-original-nome="Pão com Manteiga 2x" data-obscuro-nome="Pão com Gosma Radioativa">Pão com Manteiga 2x</td><td data-original-desc="Na chapa, sem demora. O clássico **acelerado**." data-obscuro-desc="A 'manteiga' brilha no escuro. Efeito colateral: luminescência temporária.">Na chapa, sem demora. O clássico **acelerado**.</td><td>6,00</td></tr>
+                    <tr><td>Salgados</td><td data-original-nome="Mini Pizza Cronometrada" data-obscuro-nome="Mini Pizza do Caos">Mini Pizza Cronometrada</td><td data-original-desc="Mussarela e tomate, pronta em **1 minuto**." data-obscuro-desc="Ingredientes de origem desconhecida. Pronta quando ELA quiser.">Mussarela e tomate, pronta em **1 minuto**.</td><td>8,50</td></tr>
+                    <tr><td>Hambúrgueres</td><td data-original-nome="X-Foguete (Classic)" data-obscuro-nome="X-Lamento (Clássico)">X-Foguete (Classic)</td><td data-original-desc="Pão, burger 100g, queijo, alface, tomate. Rápido e clássico." data-obscuro-desc="Pão, carne de origem duvidosa, queijo fungado, alface murcha.">Pão, burger 100g, queijo, alface, tomate. Rápido e clássico.</td><td>18,00</td></tr>
+                    <tr><td>Hambúrgueres</td><td data-original-nome="X-Infernal (Especial)" data-obscuro-nome="Hambúrguer do Cérbero">X-Infernal (Especial)</td><td data-original-desc="Duplo burger, cheddar, bacon e nosso molho picante especial." data-obscuro-desc="Ttriplo burger (?), queijo vulcânico, bacon de criatura e molho de enxofre.">Duplo burger, cheddar, bacon e nosso molho picante especial.</td><td>25,00</td></tr>
                 </tbody>
             </table>
 
             <h3>🕰️ Horários de Despacho</h3>
             <table border="1" aria-label="Horário de funcionamento e despacho de pedidos da FastPães.">
-               </table>
+               <thead><tr><th>Dia</th><th>Início</th><th>Fim</th></tr></thead>
+               <tbody><tr><td>Seg-Sáb</td><td>05:30</td><td>22:00</td></tr><tr><td>Dom/Feriados</td><td>07:00</td><td>15:00</td></tr></tbody>
+            </table>
         </section>
 
+        <hr>
+
+        <section id="bebidas-frios">
+            <h2>🧊 Bebidas e Frios</h2>
+            <p>Para acompanhar seu pão ou levar para casa!</p>
+            <table border="1">
+                <caption>Nossas Bebidas e Frios</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Preço (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frios</td>
+                        <td data-original-nome="Queijo Prato (100g)" data-obscuro-nome="Queijo Gorgon (100g)">
+                            Queijo Prato (100g)
+                        </td>
+                        <td data-original-desc="Fatiado na hora, perfeito para sanduíches."
+                            data-obscuro-desc="Maturação de 1000 anos. O cheiro é... potente.">
+                            Fatiado na hora, perfeito para sanduíches.
+                        </td>
+                        <td>8,00</td>
+                    </tr>
+                     <tr>
+                        <td>Frios</td>
+                        <td data-original-nome="Mortadela (100g)" data-obscuro-nome="Carne Curada Suspeita (100g)">
+                            Mortadela (100g)
+                        </td>
+                        <td data-original-desc="Clássica, fatiada fininha."
+                            data-obscuro-desc="Não pergunte do que é feita. Apenas coma. Ou não.">
+                            Clássica, fatiada fininha.
+                        </td>
+                        <td>7,00</td>
+                    </tr>
+                    <tr>
+                        <td>Bebidas</td>
+                        <td data-original-nome="Refrigerante (Lata)" data-obscuro-nome="Poção Efervescente">
+                            Refrigerante (Lata)
+                        </td>
+                        <td data-original-desc="Sabores variados (Coca, Guaraná). Gelado!"
+                            data-obscuro-desc="Borbulha em cores estranhas. Efeito colateral: levitação.">
+                            Sabores variados (Coca, Guaraná). Gelado!
+                        </td>
+                        <td>6,00</td>
+                    </tr>
+                    <tr>
+                        <td>Bebidas</td>
+                        <td data-original-nome="Água sem Gás (500ml)" data-obscuro-nome="Água do Rio Estige (500ml)">
+                            Água sem Gás (500ml)
+                        </td>
+                        <td data-original-desc="Hidratação pura e simples."
+                            data-obscuro-desc="Purificada... mais ou menos. Faz você esquecer seu nome.">
+                            Hidratação pura e simples.
+                        </td>
+                        <td>3,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         <hr>
 
         <section id="galeria-de-imagens">
             <h2>🖼️ Galeria Flash</h2>
             <p>A velocidade não compromete a qualidade! Veja nossos produtos.</p>
-
             <div class="galeria">
                 <figure class="produto-destaque">
                     <span class="badge-promocao">PROMOÇÃO</span>
-                    <img src="imagens/pao.png"
-                         alt="Pães franceses empilhados com vapor."
-                         title="Pão Foguete: Quente e Rápido"
-                         data-original-src="imagens/pao.png"
-                         data-original-alt="Pães franceses empilhados com vapor."
-                         data-obscuro-src="imagens/obscuro.png"
-                         data-obscuro-alt="Pão esverdeado coberto de mofo e larvas se mexendo.">
-                    <figcaption data-original-texto="Pão Foguete Quentíssimo"
-                                data-obscuro-texto="Pão Mofado (Com Surpresas)">
-                        Pão Foguete Quentíssimo
-                    </figcaption>
-                    <div class="card-botoes">
-                        <a href="pedidos.html" class="btn-comprar">Comprar Rápido</a>
-                        <a href="#detalhe-pao" class="btn-info">Saiba Mais</a>
-                    </div>
+                    <img src="imagens/pao.png" alt="Pães franceses frescos com vapor saindo, em uma cesta." title="Pão Foguete: Quente e Rápido"
+                         data-original-src="imagens/pao.png" data-original-alt="Pães franceses frescos com vapor saindo, em uma cesta."
+                         data-obscuro-src="imagens/obscuro.png" data-obscuro-alt="Pão esverdeado coberto de mofo e larvas se mexendo.">
+                    <figcaption data-original-texto="Pão Foguete Quentíssimo" data-obscuro-texto="Pão Mofado (Com Surpresas)">Pão Foguete Quentíssimo</figcaption>
+                    <div class="card-botoes"> <a href="pedidos.html" class="btn-comprar">Comprar Rápido</a> <a href="#detalhe-pao" class="btn-info">Saiba Mais</a> </div>
                 </figure>
-
                 <figure>
-                    <img src="imagens/bolo.png"
-                         alt="Fatia de bolo de chocolate."
-                         title="Bolo Propulsor: Energia Instantânea"
-                         data-original-src="imagens/bolo.png"
-                         data-original-alt="Fatia de bolo de chocolate."
-                         data-obscuro-src="imagens/bolo-sombrio.png"
-                         data-obscuro-alt="Fatia de bolo verde neon com gosma escorrendo e bolhas.">
-                    <figcaption data-original-texto="Doce para Energia Instantânea"
-                                data-obscuro-texto="Bolo Gosmento do Pântano">
-                        Doce para Energia Instantânea
-                    </figcaption>
-                    <div class="card-botoes">
-                        <a href="pedidos.html" class="btn-comprar">Comprar Rápido</a>
-                        <a href="#detalhe-bolo" class="btn-info">Saiba Mais</a>
-                    </div>
+                    <img src="imagens/bolo.png" alt="Fatia de bolo de chocolate com cobertura escorrendo em um prato." title="Bolo Propulsor: Energia Instantânea"
+                         data-original-src="imagens/bolo.png" data-original-alt="Fatia de bolo de chocolate com cobertura escorrendo."
+                         data-obscuro-src="imagens/bolo-sombrio.png" data-obscuro-alt="Fatia de bolo verde neon com gosma escorrendo e bolhas.">
+                    <figcaption data-original-texto="Doce para Energia Instantânea" data-obscuro-texto="Bolo Gosmento do Pântano">Doce para Energia Instantânea</figcaption>
+                    <div class="card-botoes"> <a href="pedidos.html" class="btn-comprar">Comprar Rápido</a> <a href="#detalhe-bolo" class="btn-info">Saiba Mais</a> </div>
                 </figure>
-
                 <figure>
-                    <img src="imagens/motoboy.png"
-                         alt="Silhueta de um motoboy em alta velocidade."
-                         title="Nossos Entregadores Flash"
-                         data-original-src="imagens/motoboy.png"
-                         data-original-alt="Silhueta de um motoboy em alta velocidade."
-                         data-obscuro-src="imagens/morte.png"
-                         data-obscuro-alt="Esqueleto de capuz pilotando uma moto em chamas e carregando uma foice.">
-                    <figcaption data-original-texto="Motoboy: A Velocidade da Entrega"
-                                data-obscuro-texto="O Ceifador Motorizado">
-                        Motoboy: A Velocidade da Entrega
-                    </figcaption>
-                    <div class="card-botoes">
-                        <a href="#detalhe-motoboy" class="btn-info">Saiba Mais</a>
-                    </div>
+                    <img src="imagens/motoboy.png" alt="Motoboy em alta velocidade à noite, com luzes borradas." title="Nossos Entregadores Flash"
+                         data-original-src="imagens/motoboy.png" data-original-alt="Motoboy em alta velocidade à noite, com luzes borradas."
+                         data-obscuro-src="imagens/morte.png" data-obscuro-alt="Esqueleto de capuz pilotando uma moto em chamas e carregando uma foice.">
+                    <figcaption data-original-texto="Motoboy: A Velocidade da Entrega" data-obscuro-texto="O Ceifador Motorizado">Motoboy: A Velocidade da Entrega</figcaption>
+                    <div class="card-botoes"> <a href="#detalhe-motoboy" class="btn-info">Saiba Mais</a> </div>
                 </figure>
-
                 <figure>
-                    <img src="imagens/forno.png"
-                         alt="Interior de um forno industrial."
-                         title="Nosso Forno Jet"
-                         data-original-src="imagens/forno.png"
-                         data-original-alt="Interior de um forno industrial."
-                         data-obscuro-src="imagens/fornalha sombria.png"
-                         data-obscuro-alt="Interior de um forno infernal com crânios sorridentes nas chamas.">
-                    <figcaption data-original-texto="Preparo no Forno Jet"
-                                data-obscuro-texto="A Fornalha das Almas">
-                        Preparo no Forno Jet
-                    </figcaption>
-                     <div class="card-botoes">
-                        <a href="#detalhe-forno" class="btn-info">Saiba Mais</a>
-                    </div>
+                    <img src="imagens/forno.png" alt="Interior de um forno industrial com pães assando." title="Nosso Forno Jet"
+                         data-original-src="imagens/forno.png" data-original-alt="Interior de um forno industrial com pães assando."
+                         data-obscuro-src="imagens/fornalha sombria.png" data-obscuro-alt="Interior de um forno infernal com crânios sorridentes nas chamas.">
+                    <figcaption data-original-texto="Preparo no Forno Jet" data-obscuro-texto="A Fornalha das Almas">Preparo no Forno Jet</figcaption>
+                     <div class="card-botoes"> <a href="#detalhe-forno" class="btn-info">Saiba Mais</a> </div>
                 </figure>
             </div>
         </section>
@@ -262,61 +200,45 @@
                     <video controls width="100%" height="auto" title="FastPães - VEO3: O Segredo da Entrega Mais Rápida do Mundo">
                         <source src="videos/promocional.mp4" type="video/mp4">
                         <source src="videos/promocional.mp4" type="video/webm">
-                        <p>Seu navegador não suporta a tag de vídeo. Você pode <a href="videos/promocional.mp4">baixar o vídeo VEO3 aqui</a>.</p>
+                        <p>Seu navegador não suporta a tag de vídeo.</p>
                     </video>
                 </div>
             </div>
         </section>
-
+        
         <hr>
 
         <section id="detalhes">
             <h2>Saiba Mais Sobre Nossos Produtos</h2>
-
             <article id="detalhe-pao">
-                <h3 data-original-titulo="Pão Foguete (Francês)"
-                    data-obscuro-titulo="Pão Mofado (com Larvas)">
-                    Pão Foguete (Francês)
-                </h3>
+                <h3 data-original-titulo="Pão Foguete (Francês)" data-obscuro-titulo="Pão Mofado (com Larvas)">Pão Foguete (Francês)</h3>
                 <p data-original-desc="Nosso Pão Foguete é o pão francês clássico, mas levado a outro nível. Ele recebe esse nome porque nosso processo de 'assamento contínuo' garante que tenhamos fornadas saindo a cada 15 minutos. Não importa a hora que você pedir, seu pão chegará quente e crocante na velocidade da luz."
                    data-obscuro-desc="Esqueça o frescor. Este pão fermentou por éons em umidade duvidosa, desenvolvendo um ecossistema próprio. As larvas garantem... proteína extra. Dizem que comer um pedaço revela segredos cósmicos (ou apenas causa indigestão severa).">
-                    Nosso Pão Foguete é o pão francês clássico, mas levado a outro nível. Ele recebe esse nome porque nosso processo de "assamento contínuo" garante que tenhamos fornadas saindo a cada 15 minutos. Não importa a hora que você pedir, seu pão chegará quente e crocante na velocidade da luz.
+                   Nosso Pão Foguete é o pão francês clássico, mas levado a outro nível. Ele recebe esse nome porque nosso processo de 'assamento contínuo' garante que tenhamos fornadas saindo a cada 15 minutos. Não importa a hora que você pedir, seu pão chegará quente e crocante na velocidade da luz.
                 </p>
                 <a href="#cabecalho-principal">Voltar ao topo</a>
             </article>
-
             <article id="detalhe-bolo">
-                <h3 data-original-titulo="Bolo Propulsor (Chocolate)"
-                    data-obscuro-titulo="Bolo Gosmento (Verde Pântano)">
-                    Bolo Propulsor (Chocolate)
-                </h3>
+                 <h3 data-original-titulo="Bolo Propulsor (Chocolate)" data-obscuro-titulo="Bolo Gosmento (Verde Pântano)">Bolo Propulsor (Chocolate)</h3>
                 <p data-original-desc="Precisa de energia instantânea? O Bolo Propulsor é a resposta. Uma fatia generosa do mais puro bolo de chocolate, com uma cobertura cremosa que derrete na boca. Mantemos as fatias pré-cortadas e armazenadas em embalagens especiais para que o envio seja imediato após o seu pedido."
                    data-obscuro-desc="Colhido diretamente de um pântano borbulhante e radioativo, este 'bolo' pulsa levemente. A cobertura verde neon escorre com uma viscosidade alarmante. Os efeitos colaterais incluem mutações temporárias e um desejo inexplicável de coaxar. Coma por sua conta e risco.">
-                    Precisa de energia instantânea? O Bolo Propulsor é a resposta. Uma fatia generosa do mais puro bolo de chocolate, com uma cobertura cremosa que derrete na boca. Mantemos as fatias pré-cortadas e armazenadas em embalagens especiais para que o envio seja imediato após o seu pedido.
+                   Precisa de energia instantânea? O Bolo Propulsor é a resposta. Uma fatia generosa do mais puro bolo de chocolate, com uma cobertura cremosa que derrete na boca. Mantemos as fatias pré-cortadas e armazenadas em embalagens especiais para que o envio seja imediato após o seu pedido.
                 </p>
                 <a href="#cabecalho-principal">Voltar ao topo</a>
             </article>
-
              <article id="detalhe-motoboy">
-                <h3 data-original-titulo="A Velocidade da Entrega"
-                    data-obscuro-titulo="O Ceifador Motorizado">
-                    A Velocidade da Entrega
-                </h3>
+                <h3 data-original-titulo="A Velocidade da Entrega" data-obscuro-titulo="O Ceifador Motorizado">A Velocidade da Entrega</h3>
                 <p data-original-desc="Nossa frota de entregadores flash é o coração da FastPães. Usamos um sistema de logística otimizado que despacha o pedido para o entregador mais próximo antes mesmo do seu pão sair do forno. Garantimos a entrega na sua porta em tempo recorde, mantendo o frescor absoluto."
                    data-obscuro-desc="Quando a fome aperta nas profundezas da noite, ele surge. Montado em sua motocicleta infernal, o Ceifador entrega... consequências. Sua foice corta o trânsito e o tempo. A taxa de entrega inclui uma pequena porção da sua alma. Sem devoluções.">
-                    Nossa frota de entregadores flash é o coração da FastPães. Usamos um sistema de logística otimizado que despacha o pedido para o entregador mais próximo antes mesmo do seu pão sair do forno. Garantimos a entrega na sua porta em tempo recorde, mantendo o frescor absoluto.
+                   Nossa frota de entregadores flash é o coração da FastPães. Usamos um sistema de logística otimizado que despacha o pedido para o entregador mais próximo antes mesmo do seu pão sair do forno. Garantimos a entrega na sua porta em tempo recorde, mantendo o frescor absoluto.
                 </p>
                 <a href="#cabecalho-principal">Voltar ao topo</a>
             </article>
-
             <article id="detalhe-forno">
-                <h3 data-original-titulo="Preparo no Forno Jet"
-                    data-obscuro-titulo="A Fornalha das Almas">
-                    Preparo no Forno Jet
-                </h3>
+                <h3 data-original-titulo="Preparo no Forno Jet" data-obscuro-titulo="A Fornalha das Almas">Preparo no Forno Jet</h3>
                 <p data-original-desc="O Forno Jet não é um forno comum. É um equipamento de alta performance com tecnologia de convecção turbo, que permite assar nossos produtos 40% mais rápido que um forno tradicional, sem perder a qualidade, a maciez ou a crocância. É o segredo da nossa agilidade na cozinha."
                    data-obscuro-desc="Alimentada por almas condenadas e mantida por demônios padeiros, esta fornalha assa em temperaturas que desafiam a física. Os crânios nas chamas sussurram receitas proibidas. O pão sai com um leve sabor de desespero e enxofre. Perfeito para rituais... ou um lanche rápido.">
-                    O Forno Jet não é um forno comum. É um equipamento de alta performance com tecnologia de convecção turbo, que permite assar nossos produtos 40% mais rápido que um forno tradicional, sem perder a qualidade, a maciez ou a crocância. É o segredo da nossa agilidade na cozinha.
+                   O Forno Jet não é um forno comum. É um equipamento de alta performance com tecnologia de convecção turbo, que permite assar nossos produtos 40% mais rápido que um forno tradicional, sem perder a qualidade, a maciez ou a crocância. É o segredo da nossa agilidade na cozinha.
                 </p>
                 <a href="#cabecalho-principal">Voltar ao topo</a>
             </article>
@@ -325,46 +247,25 @@
 
     <hr>
 
-    <a href="https://wa.me/5511999998888" target="_blank" id="btn-whatsapp" title="Fale conosco pelo WhatsApp">💬</a>
+    <a href="https://wa.me/5511999998888" target="_blank" id="btn-whatsapp" title="Fale conosco">💬</a>
     <a href="#cabecalho-principal" id="btn-voltar-topo" title="Voltar ao topo">⬆️</a>
 
     <footer id="rodape">
         <div class="rodape-container">
-            <div class="rodape-coluna">
-                <h4>Sobre Nós</h4>
-                <p>&copy; 2025 FastPães.<br> A Velocidade Saborosa.
-                   <span class="easter-egg">(Pssst... Nossos pães chegam antes mesmo de você pedir!)</span>
-                </p>
-            </div>
-            <div class="rodape-coluna">
-                <h4>Navegação Rápida</h4>
-                <a href="index.html">Início</a><br>
-                <a href="contato.html">Contato</a><br>
-                <a href="pedidos.html">Pedidos</a>
-            </div>
-            <div class="rodape-coluna">
-                <h4>Desenvolvido por</h4>
-                <p>Igor Gabriel de Lima Fernandes</p>
-            </div>
+            <div class="rodape-coluna"><h4>Sobre Nós</h4><p>&copy; 2025 FastPães.<br> A Velocidade Saborosa.<span class="easter-egg">(Pssst...)</span></p></div>
+            <div class="rodape-coluna"><h4>Navegação Rápida</h4><a href="index.html">Início</a><br><a href="contato.html">Contato</a><br><a href="pedidos.html">Pedidos</a></div>
+            <div class="rodape-coluna"><h4>Desenvolvido por</h4><p>Igor Gabriel de Lima Fernandes</p></div>
         </div>
     </footer>
 
 
-    <script>
-        // console.clear();
-        const estiloTitulo = "color: #FF4500; font-size: 1.5em; font-weight: bold; border-bottom: 2px solid #FFDAB9; padding-bottom: 5px;";
-        const estiloNormal = "color: #333; font-size: 1em;";
-        const estiloSegredo = "color: blue; font-style: italic;";
-        console.log("%cEi, curioso! 🕵️‍♂️", estiloTitulo);
-        console.log("%cNossos pães são tão rápidos que o código deles nem deu tempo de carregar direito... Brincadeira!", estiloNormal);
-        console.log(" ");
-        console.log("%cPssst... Tenta o Konami Code (↑↑↓↓←→←→BA)!", estiloSegredo);
-    </script>
+    <script src="script.js"></script>
 
-    <script>
-        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        let konamiIndex = 0;
-
+    <script> const estiloTitulo = "color: #FF4500; font-size: 1.5em; ..."; console.log("%cEi, curioso! 🕵️‍♂️", estiloTitulo);</script>
+    
+    <script> 
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']; 
+        let konamiIndex = 0; 
         document.addEventListener('keydown', function(event) {
             const key = event.key.toLowerCase();
             if (key === konamiCode[konamiIndex].toLowerCase()) {
@@ -376,87 +277,59 @@
             } else {
                  if (key === konamiCode[0].toLowerCase()) { konamiIndex = 1; } else { konamiIndex = 0; }
             }
-        });
-// Função ATUALIZADA que ativa/desativa o modo "Padaria Obscura"
-function ativarModoObscuro() {
-    console.log("😈 Código Konami! 😈");
-    const body = document.body;
-    const modoObscuroAtivo = body.classList.contains('padaria-obscura');
-    body.classList.toggle('padaria-obscura');
+        }); 
+        
+        function ativarModoObscuro() {
+            console.log("😈 Código Konami! 😈");
+            const body = document.body;
+            const modoObscuroAtivo = body.classList.contains('padaria-obscura');
+            body.classList.toggle('padaria-obscura');
 
-    // Seleciona TODOS os elementos que precisam mudar
-    const tituloPrincipal = document.querySelector('#cabecalho-principal h1');
-    const sloganPrincipal = document.querySelector('#cabecalho-principal p'); // <-- NOVO: Seleciona o P
-    const nomesProdutos = document.querySelectorAll('#cardapio td[data-obscuro-nome]');
-    const descProdutos = document.querySelectorAll('#cardapio td[data-obscuro-desc]');
-    const imagensGaleria = document.querySelectorAll('.galeria img[data-obscuro-src]');
-    const legendasGaleria = document.querySelectorAll('.galeria figcaption[data-obscuro-texto]');
-    const titulosDetalhes = document.querySelectorAll('#detalhes h3[data-obscuro-titulo]');
-    const descDetalhes = document.querySelectorAll('#detalhes p[data-obscuro-desc]');
+            // Seleciona TUDO que muda
+            const tituloPrincipal = document.querySelector('#cabecalho-principal h1');
+            const sloganPrincipal = document.querySelector('#cabecalho-principal p');
+            const nomesProdutos = document.querySelectorAll('td[data-obscuro-nome]'); // Pega TODAS as tabelas
+            const descProdutos = document.querySelectorAll('td[data-obscuro-desc]'); // Pega TODAS as tabelas
+            const imagensGaleria = document.querySelectorAll('.galeria img[data-obscuro-src]');
+            const legendasGaleria = document.querySelectorAll('.galeria figcaption[data-obscuro-texto]');
+            const titulosDetalhes = document.querySelectorAll('#detalhes h3[data-obscuro-titulo]');
+            const descDetalhes = document.querySelectorAll('#detalhes p[data-obscuro-desc]');
+            const opcoesCalculadora = document.querySelectorAll('#produto option'); // Pega as opções do <select>
 
-    if (!modoObscuroAtivo) {
-        // --- ATIVANDO MODO OBSCURO ---
-        console.log("Entrando na Padaria Obscura...");
-        alert('Você destravou a Padaria Obscura! 🍞🔥');
+            if (!modoObscuroAtivo) {
+                // --- ATIVANDO MODO OBSCURO ---
+                console.log("Entrando..."); alert('Você destravou a Padaria Obscura! 🍞🔥');
+                if (tituloPrincipal) { tituloPrincipal.textContent = tituloPrincipal.dataset.obscuroTitulo; }
+                if (sloganPrincipal) { sloganPrincipal.innerHTML = sloganPrincipal.dataset.obscuroSlogan; }
+                nomesProdutos.forEach(td => { if(td.dataset.obscuroNome) { td.textContent = td.dataset.obscuroNome; } });
+                descProdutos.forEach(td => { if(td.dataset.obscuroDesc) { td.innerHTML = td.dataset.obscuroDesc; } });
+                imagensGaleria.forEach(img => { img.src = img.dataset.obscuroSrc; img.alt = img.dataset.obscuroAlt; });
+                legendasGaleria.forEach(fig => { fig.textContent = fig.dataset.obscuroTexto; });
+                titulosDetalhes.forEach(h3 => { h3.textContent = h3.dataset.obscuroTitulo; });
+                descDetalhes.forEach(p => { p.textContent = p.dataset.obscuroDesc; });
+                // Troca o texto da Calculadora
+                opcoesCalculadora.forEach(opt => { if (opt.dataset.obscuroTexto) { opt.textContent = opt.dataset.obscuroTexto; } });
 
-        // Muda o título e slogan
-        if (tituloPrincipal) { tituloPrincipal.textContent = tituloPrincipal.dataset.obscuroTitulo; }
-        if (sloganPrincipal) { sloganPrincipal.innerHTML = sloganPrincipal.dataset.obscuroSlogan; } // <-- NOVO: Muda o P (innerHTML para manter **)
-
-        // Muda o restante
-        nomesProdutos.forEach(td => { td.textContent = td.dataset.obscuroNome; });
-        descProdutos.forEach(td => { td.innerHTML = td.dataset.obscuroDesc; });
-        imagensGaleria.forEach(img => { img.src = img.dataset.obscuroSrc; img.alt = img.dataset.obscuroAlt; });
-        legendasGaleria.forEach(fig => { fig.textContent = fig.dataset.obscuroTexto; });
-        titulosDetalhes.forEach(h3 => { h3.textContent = h3.dataset.obscuroTitulo; });
-        descDetalhes.forEach(p => { p.textContent = p.dataset.obscuroDesc; });
-
-    } else {
-        // --- DESATIVANDO MODO OBSCURO ---
-        console.log("Voltando à luz...");
-
-         // Restaura o título e slogan
-        if (tituloPrincipal) { tituloPrincipal.textContent = tituloPrincipal.dataset.originalTitulo; }
-        if (sloganPrincipal) { sloganPrincipal.innerHTML = sloganPrincipal.dataset.originalSlogan; } // <-- NOVO: Restaura o P (innerHTML para manter **)
-
-        // Restaura o restante
-        nomesProdutos.forEach(td => { td.textContent = td.dataset.originalNome; });
-        descProdutos.forEach(td => { td.innerHTML = td.dataset.originalDesc; });
-        imagensGaleria.forEach(img => { img.src = img.dataset.originalSrc; img.alt = img.dataset.originalAlt; });
-        legendasGaleria.forEach(fig => { fig.textContent = fig.dataset.originalTexto; });
-        titulosDetalhes.forEach(h3 => { h3.textContent = h3.dataset.originalTitulo; });
-        descDetalhes.forEach(p => { p.textContent = p.dataset.originalDesc; });
-    }
-}
+            } else {
+                // --- DESATIVANDO MODO OBSCURO ---
+                console.log("Voltando...");
+                if (tituloPrincipal) { tituloPrincipal.textContent = tituloPrincipal.dataset.originalTitulo; }
+                if (sloganPrincipal) { sloganPrincipal.innerHTML = sloganPrincipal.dataset.originalSlogan; }
+                nomesProdutos.forEach(td => { if(td.dataset.originalNome) { td.textContent = td.dataset.originalNome; } });
+                descProdutos.forEach(td => { if(td.dataset.originalDesc) { td.innerHTML = td.dataset.originalDesc; } });
+                imagensGaleria.forEach(img => { img.src = img.dataset.originalSrc; img.alt = img.dataset.originalAlt; });
+                legendasGaleria.forEach(fig => { fig.textContent = fig.dataset.originalTexto; });
+                titulosDetalhes.forEach(h3 => { h3.textContent = h3.dataset.originalTitulo; });
+                descDetalhes.forEach(p => { p.textContent = p.dataset.originalDesc; });
+                // Restaura o texto da Calculadora
+                opcoesCalculadora.forEach(opt => { if (opt.dataset.originalTexto) { opt.textContent = opt.dataset.originalTexto; } });
+            }
+        } 
     </script>
+    
+    <script> const navLinks = document.querySelectorAll('#cabecalho-principal > nav a'); const scarySound = new Audio('sounds/scary.mp3'); navLinks.forEach(link => { link.addEventListener('click', function(event) { if (document.body.classList.contains('padaria-obscura') && link.getAttribute('href') !== 'index.html') { event.preventDefault(); scarySound.play(); alert("VOLTE AGORA, OU NÃO SOBREVIVERÁ O SUFICIENTE PARA SE ARREPENDER DESTA ESCOLHA!"); } }); }); </script>
+    
+    <script> const hamburgerButton = document.querySelector('.hamburger-menu'); const navLinksContainer = document.querySelector('.nav-links'); hamburgerButton.addEventListener('click', () => { const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true'; hamburgerButton.setAttribute('aria-expanded', !isExpanded); navLinksContainer.classList.toggle('active'); }); </script>
 
-        <script>
-            // Pega todos os links da navegação principal
-            const navLinks = document.querySelectorAll('#cabecalho-principal > nav > a');
-            // Cria o objeto de áudio (mas não toca ainda)
-            const scarySound = new Audio('sounds/scary.mp3'); // <-- VERIFIQUE O NOME/CAMINHO DO SEU SOM
-
-            // Adiciona um 'escutador' de clique para CADA link
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    // Verifica se o modo obscuro está ativo
-                    if (document.body.classList.contains('padaria-obscura')) {
-                        // Impede o link de funcionar
-                        event.preventDefault(); 
-
-                        // Toca o som sombrio
-                        scarySound.play(); 
-
-                        // Mostra a mensagem
-                        alert("VOLTE AGORA, OU NÃO SOBREVIVERÁ O SUFICIENTE PARA SE ARREPENDER DESTA ESCOLHA!"); 
-                    }
-                    // Se o modo obscuro NÃO estiver ativo, o link funciona normalmente
-                });
-            });
-        </script>
-
-    </body>
-    </html>
 </body>
-
 </html>

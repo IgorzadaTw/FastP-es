@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - FastPães</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <header>
@@ -16,50 +16,24 @@
             <form action="#" method="post" id="meuFormulario">
                 <fieldset>
                     <legend>Seus Dados (Opcional)</legend>
-                    <p>
-                        <label for="nome">Nome:</label><br>
-                        <input type="text" id="nome" name="nome">
-                    </p>
-                    <p>
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email">
-                    </p>
+                    <p><label for="nome">Nome:</label><br><input type="text" id="nome" name="nome"></p>
+                    <p><label for="email">Email:</label><br><input type="email" id="email" name="email"></p>
                 </fieldset>
                 <fieldset>
                     <legend>Sua Avaliação</legend>
-                    <p>
-                        <label for="servico">Produto/Serviço Avaliado: *</label><br>
+                    <p><label for="servico">Produto/Serviço Avaliado: *</label><br>
                         <select id="servico" name="servico" required>
                             <option value="" disabled selected>Selecione o que você está avaliando</option>
-                            <option value="paes">🥖 Pães</option>
-                            <option value="doces">🍰 Doces e bolos</option>
-                            <option value="salgados">🥐 Salgados</option>
-                            <option value="atendimento">👥 Atendimento</option>
-                            <option value="velocidade">🚀 Velocidade da Entrega</option>
+                            <option value="paes">🥖 Pães</option><option value="doces">🍰 Doces e bolos</option><option value="salgados">🥐 Salgados</option><option value="atendimento">👥 Atendimento</option><option value="velocidade">🚀 Velocidade da Entrega</option>
                         </select>
                     </p>
-                    <p>
-                        Avaliação Geral: *<br>
-                        <input type="radio" id="excelente" name="avaliacao" value="excelente" required> <label for="excelente">🌟 Excelente</label><br>
-                        <input type="radio" id="bom" name="avaliacao" value="bom"> <label for="bom">👍 Bom</label><br>
-                        <input type="radio" id="regular" name="avaliacao" value="regular"> <label for="regular">😐 Regular</label><br>
-                        <input type="radio" id="ruim" name="avaliacao" value="ruim"> <label for="ruim">👎 Ruim</label>
-                    </p>
-                    <p>
-                        <label for="comentarios">Comentários:</label><br>
-                        <textarea id="comentarios" name="comentarios" rows="5" placeholder="Gostaria de nos dizer algo mais?"></textarea>
-                    </p>
+                    <p>Avaliação Geral: *<br><input type="radio" id="excelente" name="avaliacao" value="excelente" required> <label for="excelente">🌟 Excelente</label><br><input type="radio" id="bom" name="avaliacao" value="bom"> <label for="bom">👍 Bom</label><br><input type="radio" id="regular" name="avaliacao" value="regular"> <label for="regular">😐 Regular</label><br><input type="radio" id="ruim" name="avaliacao" value="ruim"> <label for="ruim">👎 Ruim</label></p>
+                    <p><label for="comentarios">Comentários:</label><br><textarea id="comentarios" name="comentarios" rows="5" placeholder="Gostaria de nos dizer algo mais?"></textarea></p>
                 </fieldset>
                 <fieldset>
                     <legend>Permissões</legend>
-                    <p>
-                        <input type="checkbox" id="recomenda" name="recomenda" value="sim">
-                        <label for="recomenda">Você recomendaria a FastPães para amigos?</label>
-                    </p>
-                    <p>
-                        <input type="checkbox" id="publica" name="publica" value="sim">
-                        <label for="publica">Autoriza a publicação do seu depoimento em nosso site?</label>
-                    </p>
+                    <p><input type="checkbox" id="recomenda" name="recomenda" value="sim"> <label for="recomenda">Você recomendaria a FastPães para amigos?</label></p>
+                    <p><input type="checkbox" id="publica" name="publica" value="sim"> <label for="publica">Autoriza a publicação do seu depoimento em nosso site?</label></p>
                 </fieldset>
                 <p><button type="submit">Enviar Avaliação</button></p>
             </form>
